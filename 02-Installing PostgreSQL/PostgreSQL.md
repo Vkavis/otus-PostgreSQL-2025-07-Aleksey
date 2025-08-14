@@ -20,4 +20,4 @@ docker run --name my-pgadmin -p 5080:80 -v pgadmin:/var/lib/pgadmin -e PGADMIN_D
 docker rm pg-server
 ![](2025-08-14_15-42-29.jpg)
 
---Дапнные юаза и таблица остались целые.
+- База и таблица остались целые.
