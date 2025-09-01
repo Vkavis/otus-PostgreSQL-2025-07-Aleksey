@@ -134,6 +134,18 @@ sudo chown -R postgres:postgres /mnt/postgres
 sudo mount /dev/sdb1 /mnt/postgres/
 ```
 
+-  Узнай UUID диска (рекомендуется вместо /dev/sdb1)
+```
+kopytax@UB25:~$ sudo blkid /dev/sdb1
+/dev/sdb1: LABEL="datapartition" UUID="139709a8-3c03-460c-8b2f-3ccceff5fb22" BLOCK_SIZE="4096" TYPE="ext4" PARTLABEL="primary" PARTUUID="a0fe666b-8ccc-4f68-9d34-3bff55add678"
+```
+- Откроем файл /etc/fstab для редактирования
+```
+sudo nano /etc/fstab
+```
+- Добавь в конец файла строку вида:
+UUID=139709a8-3c03-460c-8b2f-3ccceff5fb22 /mnt/postgres ext4 defaults 0 2
+
 - Перенесите содержимое /var/lib/postgres/17 в /mnt/postgres - mv /var/lib/postgresql/17 /mnt/postgres
 ```
 sudo mv /var/lib/postgresql/17 /mnt/postgres
