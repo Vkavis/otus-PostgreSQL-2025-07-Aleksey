@@ -70,15 +70,9 @@ postgres=# select * from persons;
 
 11. Начинаем новые, но уже repeatable read транзации - set transaction isolation level repeatable read;
 ```
+BEGIN;
 postgres=*# set transaction isolation level repeatable read;
 SET
-postgres=*# SHOW transaction_isolation;
- transaction_isolation
------------------------
- repeatable read
-(1 row)
-
-postgres=*# BEGIN
 
 ```
 12. Добавляем в первой сессии новую запись insert into persons(first_name, second_name) values('svaeta', 'svetova');
