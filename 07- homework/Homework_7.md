@@ -157,7 +157,7 @@ kopytax@UB25:~$ sudo pg_ctlcluster 17 postgres2 stop
 Добвит  символов sudo nano /mnt/postgres2/base/5/16389 :
 ![alt text](image-1.png)
 ```
-Старт кластера:
+Старт кластерар:
 kopytax@UB25:~$ sudo pg_ctlcluster 17 postgres2 start
 ```
 ### Выполняем запрос на выборку данных:
