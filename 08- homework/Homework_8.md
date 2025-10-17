@@ -68,16 +68,14 @@ kopytax@UB25:~$ sudo cat /var/log/postgresql/postgresql-17-main.log
 
 Запускаем update в первой сессии:
 ```
-
 postgres=# \set AUTOCOMMIT off
 postgres=# begin;
 BEGIN
 postgres=*# update users set name='Fedor' where id=1;
 UPDATE 1
-
 ```
 Затем такую команду еще в 2-x сессиях:
-```
+
 postgres=*# update users set name='Fedor' where id=1;
 ```
 Смотрим select * FROM pg_locks;
@@ -98,7 +96,7 @@ postgres=*# update users set name='Fedor' where id=1;
  tuple         |        5 |    24913 |    0 |     1 |            |               |         |       |          | 7/2                | 1305 | ExclusiveLock    | f       | f        | 2025-10-17 17:34:06.041183+00
  transactionid |          |          |      |       |            |        331442 |         |       |          | 7/2                | 1305 | ExclusiveLock    | t       | f        |
  transactionid |          |          |      |       |            |        331440 |         |       |          | 5/2                | 1223 | ExclusiveLock    | t       | f        |
-  
+  ```
 
 Посмотрим с учетом зависимостей: 
 SELECT locktype, mode, granted, pid, pg_blocking_pids(pid) AS wait_for FROM pg_locks WHERE relation = 'users'::regclass;
