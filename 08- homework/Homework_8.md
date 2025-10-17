@@ -62,6 +62,7 @@ kopytax@UB25:~$ sudo cat /var/log/postgresql/postgresql-17-main.log
 2025-10-17 17:24:34.239 UTC [1175] postgres@postgres STATEMENT:  update users set name='Fedor' where id=2;
 2025-10-17 17:24:51.963 UTC [840] LOG:  checkpoint starting: time
 2025-10-17 17:24:52.410 UTC [840] LOG:  checkpoint complete: wrote 1 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.007 s, sync=0.003 s, total=0.447 s; sync files=1, longest=0.003 s, average=0.003 s; distance=0 kB, estimate=0 kB; lsn=2/4B4A2330, redo lsn=2/4B4A22D8
+```
 
 ### Update в 3-х сессиях:
 
