@@ -1,0 +1,70 @@
+Dec 05 14:03:35 node1 patroni[2061]: 2025-12-05 14:03:35,553 INFO: Selected new etcd server http://192.168.31.173:2379
+Dec 05 14:03:35 node1 patroni[2061]: 2025-12-05 14:03:35,756 INFO: No PostgreSQL configuration items changed, nothing to reload.
+Dec 05 14:03:35 node1 patroni[2061]: 2025-12-05 14:03:35,758 INFO: Systemd integration is not supported
+Dec 05 14:03:35 node1 patroni[2061]: 2025-12-05 14:03:35,805 INFO: Lock owner: None; I am node1
+Dec 05 14:03:35 node1 patroni[2061]: 2025-12-05 14:03:35,923 INFO: trying to bootstrap a new cluster
+Dec 05 14:03:36 node1 patroni[2068]: The files belonging to this database system will be owned by user "postgres".
+Dec 05 14:03:36 node1 patroni[2068]: This user must also own the server process.
+Dec 05 14:03:36 node1 patroni[2068]: The database cluster will be initialized with locale "en_US.UTF-8".
+Dec 05 14:03:36 node1 patroni[2068]: The default text search configuration will be set to "english".
+Dec 05 14:03:36 node1 patroni[2068]: Data page checksums are enabled.
+Dec 05 14:03:36 node1 patroni[2068]: creating directory /var/lib/postgresql/17/main ... ok
+Dec 05 14:03:36 node1 patroni[2068]: creating subdirectories ... ok
+Dec 05 14:03:36 node1 patroni[2068]: selecting dynamic shared memory implementation ... posix
+Dec 05 14:03:37 node1 patroni[2068]: selecting default "max_connections" ... 100
+Dec 05 14:03:37 node1 patroni[2068]: selecting default "shared_buffers" ... 128MB
+Dec 05 14:03:37 node1 patroni[2068]: selecting default time zone ... Etc/UTC
+Dec 05 14:03:37 node1 patroni[2068]: creating configuration files ... ok
+Dec 05 14:03:37 node1 patroni[2068]: running bootstrap script ... ok
+kop@node1:~$ sudo journalctl -u patroni -n 50 --no-pager
+Dec 05 14:01:41 node1 patroni[1954]: 2025-12-05 14:01:41,422 INFO: waiting for leader to bootstrap
+Dec 05 14:01:51 node1 patroni[1954]: 2025-12-05 14:01:51,372 INFO: Lock owner: None; I am node1
+Dec 05 14:01:51 node1 patroni[1954]: 2025-12-05 14:01:51,424 INFO: waiting for leader to bootstrap
+Dec 05 14:02:01 node1 patroni[1954]: 2025-12-05 14:02:01,372 INFO: Lock owner: None; I am node1
+Dec 05 14:02:01 node1 patroni[1954]: 2025-12-05 14:02:01,420 INFO: waiting for leader to bootstrap
+Dec 05 14:02:11 node1 patroni[1954]: 2025-12-05 14:02:11,373 INFO: Lock owner: None; I am node1
+Dec 05 14:02:11 node1 patroni[1954]: 2025-12-05 14:02:11,427 INFO: waiting for leader to bootstrap
+Dec 05 14:02:16 node1 systemd[1]: Stopping patroni.service - High availability PostgreSQL Cluster - Patroni...
+Dec 05 14:02:16 node1 systemd[1]: patroni.service: Deactivated successfully.
+Dec 05 14:02:16 node1 systemd[1]: Stopped patroni.service - High availability PostgreSQL Cluster - Patroni.
+Dec 05 14:03:34 node1 systemd[1]: Started patroni.service - High availability PostgreSQL Cluster - Patroni.
+Dec 05 14:03:35 node1 patroni[2061]: 2025-12-05 14:03:35,553 INFO: Selected new etcd server http://192.168.31.173:2379
+Dec 05 14:03:35 node1 patroni[2061]: 2025-12-05 14:03:35,756 INFO: No PostgreSQL configuration items changed, nothing to reload.
+Dec 05 14:03:35 node1 patroni[2061]: 2025-12-05 14:03:35,758 INFO: Systemd integration is not supported
+Dec 05 14:03:35 node1 patroni[2061]: 2025-12-05 14:03:35,805 INFO: Lock owner: None; I am node1
+Dec 05 14:03:35 node1 patroni[2061]: 2025-12-05 14:03:35,923 INFO: trying to bootstrap a new cluster
+Dec 05 14:03:36 node1 patroni[2068]: The files belonging to this database system will be owned by user "postgres".
+Dec 05 14:03:36 node1 patroni[2068]: This user must also own the server process.
+Dec 05 14:03:36 node1 patroni[2068]: The database cluster will be initialized with locale "en_US.UTF-8".
+Dec 05 14:03:36 node1 patroni[2068]: The default text search configuration will be set to "english".
+Dec 05 14:03:36 node1 patroni[2068]: Data page checksums are enabled.
+Dec 05 14:03:36 node1 patroni[2068]: creating directory /var/lib/postgresql/17/main ... ok
+Dec 05 14:03:36 node1 patroni[2068]: creating subdirectories ... ok
+Dec 05 14:03:36 node1 patroni[2068]: selecting dynamic shared memory implementation ... posix
+Dec 05 14:03:37 node1 patroni[2068]: selecting default "max_connections" ... 100
+Dec 05 14:03:37 node1 patroni[2068]: selecting default "shared_buffers" ... 128MB
+Dec 05 14:03:37 node1 patroni[2068]: selecting default time zone ... Etc/UTC
+Dec 05 14:03:37 node1 patroni[2068]: creating configuration files ... ok
+Dec 05 14:03:37 node1 patroni[2068]: running bootstrap script ... ok
+Dec 05 14:03:39 node1 patroni[2068]: performing post-bootstrap initialization ... ok
+Dec 05 14:03:41 node1 patroni[2068]: syncing data to disk ... ok
+Dec 05 14:03:41 node1 patroni[2068]: initdb: warning: enabling "trust" authentication for local connections
+Dec 05 14:03:41 node1 patroni[2068]: initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+Dec 05 14:03:41 node1 patroni[2068]: Success. You can now start the database server using:
+Dec 05 14:03:41 node1 patroni[2068]:     /usr/lib/postgresql/17/bin/pg_ctl -D /var/lib/postgresql/17/main -l logfile start
+Dec 05 14:03:42 node1 patroni[2061]: 2025-12-05 14:03:42,677 INFO: postmaster pid=2088
+Dec 05 14:03:42 node1 patroni[2088]: 2025-12-05 14:03:42.743 UTC [2088] LOG:  starting PostgreSQL 17.7 (Ubuntu 17.7-3.pgdg24.04+1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0, 64-bit
+Dec 05 14:03:42 node1 patroni[2088]: 2025-12-05 14:03:42.744 UTC [2088] LOG:  listening on IPv4 address "192.168.31.171", port 5432
+Dec 05 14:03:42 node1 patroni[2089]: localhost:5432 - no response
+Dec 05 14:03:42 node1 patroni[2088]: 2025-12-05 14:03:42.778 UTC [2088] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+Dec 05 14:03:42 node1 patroni[2088]: 2025-12-05 14:03:42.778 UTC [2088] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+Dec 05 14:03:42 node1 patroni[2092]: 2025-12-05 14:03:42.813 UTC [2092] LOG:  database system was shut down at 2025-12-05 14:03:39 UTC
+Dec 05 14:03:42 node1 patroni[2088]: 2025-12-05 14:03:42.839 UTC [2088] LOG:  database system is ready to accept connections
+Dec 05 14:03:43 node1 patroni[2097]: localhost:5432 - accepting connections
+Dec 05 14:03:43 node1 patroni[2099]: localhost:5432 - accepting connections
+Dec 05 14:03:43 node1 patroni[2061]: 2025-12-05 14:03:43,827 INFO: establishing a new patroni heartbeat connection to postgres
+Dec 05 14:03:43 node1 patroni[2061]: 2025-12-05 14:03:43,920 INFO: running post_bootstrap
+Dec 05 14:03:44 node1 patroni[2061]: 2025-12-05 14:03:44,266 INFO: initialized a new cluster
+Dec 05 14:03:44 node1 patroni[2061]: 2025-12-05 14:03:44,384 INFO: no action. I am (node1), the leader with the lock
+Dec 05 14:03:54 node1 patroni[2061]: 2025-12-05 14:03:54,317 INFO: no action. I am (node1), the leader with the lock
+kop@node1:~$ psql -h localhost -U postgres -d postgres

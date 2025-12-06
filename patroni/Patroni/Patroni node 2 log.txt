@@ -1,0 +1,33 @@
+Dec 05 14:14:32 node2 systemd[1]: Started patroni.service - High availability PostgreSQL Cluster - Patroni.
+Dec 05 14:14:33 node2 patroni[1996]: 2025-12-05 14:14:33,371 INFO: Selected new etcd server http://192.168.31.173:2379
+Dec 05 14:14:33 node2 patroni[1996]: 2025-12-05 14:14:33,438 INFO: No PostgreSQL configuration items changed, nothing to reload.
+Dec 05 14:14:33 node2 patroni[1996]: 2025-12-05 14:14:33,445 INFO: Systemd integration is not supported
+Dec 05 14:14:33 node2 patroni[1996]: 2025-12-05 14:14:33,492 INFO: Lock owner: node1; I am node2
+Dec 05 14:14:33 node2 patroni[1996]: 2025-12-05 14:14:33,512 INFO: trying to bootstrap from leader 'node1'
+Dec 05 14:14:34 node2 patroni[1996]: 2025-12-05 14:14:34,441 INFO: Lock owner: node1; I am node2
+Dec 05 14:14:34 node2 patroni[1996]: 2025-12-05 14:14:34,585 INFO: bootstrap from leader 'node1' in progress
+Dec 05 14:14:38 node2 patroni[1996]: 2025-12-05 14:14:38,997 INFO: replica has been created using basebackup
+Dec 05 14:14:38 node2 patroni[1996]: 2025-12-05 14:14:38,998 INFO: bootstrapped from leader 'node1'
+Dec 05 14:14:40 node2 patroni[1996]: 2025-12-05 14:14:40,094 INFO: postmaster pid=2011
+Dec 05 14:14:40 node2 patroni[2012]: localhost:5432 - no response
+Dec 05 14:14:40 node2 patroni[2011]: 2025-12-05 14:14:40.419 UTC [2011] LOG:  starting PostgreSQL 17.7 (Ubuntu 17.7-3.pgdg24.04+1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0, 64-bit
+Dec 05 14:14:40 node2 patroni[2011]: 2025-12-05 14:14:40.422 UTC [2011] LOG:  listening on IPv4 address "192.168.31.172", port 5432
+Dec 05 14:14:40 node2 patroni[2011]: 2025-12-05 14:14:40.428 UTC [2011] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+Dec 05 14:14:40 node2 patroni[2011]: 2025-12-05 14:14:40.428 UTC [2011] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+Dec 05 14:14:40 node2 patroni[2015]: 2025-12-05 14:14:40.441 UTC [2015] LOG:  database system was interrupted; last known up at 2025-12-05 14:14:33 UTC
+Dec 05 14:14:41 node2 patroni[2017]: 2025-12-05 14:14:41.195 UTC [2017] FATAL:  the database system is starting up
+Dec 05 14:14:41 node2 patroni[2016]: localhost:5432 - rejecting connections
+Dec 05 14:14:41 node2 patroni[2019]: 2025-12-05 14:14:41.265 UTC [2019] FATAL:  the database system is starting up
+Dec 05 14:14:41 node2 patroni[2018]: localhost:5432 - rejecting connections
+Dec 05 14:14:41 node2 patroni[2015]: 2025-12-05 14:14:41.440 UTC [2015] LOG:  starting backup recovery with redo LSN 0/2000028, checkpoint LSN 0/2000080, on timeline ID 1
+Dec 05 14:14:41 node2 patroni[2015]: 2025-12-05 14:14:41.440 UTC [2015] LOG:  entering standby mode
+Dec 05 14:14:41 node2 patroni[2015]: 2025-12-05 14:14:41.457 UTC [2015] LOG:  redo starts at 0/2000028
+Dec 05 14:14:41 node2 patroni[2015]: 2025-12-05 14:14:41.462 UTC [2015] LOG:  completed backup recovery with redo LSN 0/2000028 and end LSN 0/2000158
+Dec 05 14:14:41 node2 patroni[2015]: 2025-12-05 14:14:41.463 UTC [2015] LOG:  consistent recovery state reached at 0/2000158
+Dec 05 14:14:41 node2 patroni[2011]: 2025-12-05 14:14:41.463 UTC [2011] LOG:  database system is ready to accept read-only connections
+Dec 05 14:14:41 node2 patroni[2020]: 2025-12-05 14:14:41.506 UTC [2020] LOG:  started streaming WAL from primary at 0/3000000 on timeline 1
+Dec 05 14:14:42 node2 patroni[2021]: localhost:5432 - accepting connections
+Dec 05 14:14:42 node2 patroni[1996]: 2025-12-05 14:14:42,380 INFO: Lock owner: node1; I am node2
+Dec 05 14:14:42 node2 patroni[1996]: 2025-12-05 14:14:42,380 INFO: establishing a new patroni heartbeat connection to postgres
+Dec 05 14:14:42 node2 patroni[1996]: 2025-12-05 14:14:42,664 INFO: no action. I am (node2), a secondary, and following a leader (node1)
+Dec 05 14:14:44 node2 patroni[1996]: 2025-12-05 14:14:44,430 INFO: no action. I am (node2), a secondary, and following a leader (node1)

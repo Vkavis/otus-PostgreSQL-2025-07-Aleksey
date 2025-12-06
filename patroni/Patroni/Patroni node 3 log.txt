@@ -1,0 +1,35 @@
+Dec 05 14:19:37 node3 systemd[1]: Started patroni.service - High availability PostgreSQL Cluster - Patroni.
+Dec 05 14:19:38 node3 patroni[1763]: 2025-12-05 14:19:38,429 INFO: Selected new etcd server http://192.168.31.173:2379
+Dec 05 14:19:38 node3 patroni[1763]: 2025-12-05 14:19:38,501 INFO: No PostgreSQL configuration items changed, nothing to reload.
+Dec 05 14:19:38 node3 patroni[1763]: 2025-12-05 14:19:38,517 INFO: Systemd integration is not supported
+Dec 05 14:19:38 node3 patroni[1763]: 2025-12-05 14:19:38,557 INFO: Lock owner: node1; I am node3
+Dec 05 14:19:38 node3 patroni[1763]: 2025-12-05 14:19:38,598 INFO: trying to bootstrap from replica 'node2'
+Dec 05 14:19:42 node3 patroni[1763]: 2025-12-05 14:19:42,622 INFO: replica has been created using basebackup
+Dec 05 14:19:42 node3 patroni[1763]: 2025-12-05 14:19:42,624 INFO: bootstrapped from replica 'node2'
+Dec 05 14:19:43 node3 patroni[1763]: 2025-12-05 14:19:43,794 INFO: postmaster pid=1778
+Dec 05 14:19:43 node3 patroni[1779]: localhost:5432 - no response
+Dec 05 14:19:44 node3 patroni[1778]: 2025-12-05 14:19:44.077 UTC [1778] LOG:  starting PostgreSQL 17.7 (Ubuntu 17.7-3.pgdg24.04+1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0, 64-bit
+Dec 05 14:19:44 node3 patroni[1778]: 2025-12-05 14:19:44.078 UTC [1778] LOG:  listening on IPv4 address "192.168.31.173", port 5432
+Dec 05 14:19:44 node3 patroni[1778]: 2025-12-05 14:19:44.083 UTC [1778] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+Dec 05 14:19:44 node3 patroni[1778]: 2025-12-05 14:19:44.084 UTC [1778] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+Dec 05 14:19:44 node3 patroni[1782]: 2025-12-05 14:19:44.099 UTC [1782] LOG:  database system was interrupted while in recovery at log time 2025-12-05 14:19:34 UTC
+Dec 05 14:19:44 node3 patroni[1782]: 2025-12-05 14:19:44.099 UTC [1782] HINT:  If this has occurred more than once some data might be corrupted and you might need to choose an earlier recovery target.
+Dec 05 14:19:44 node3 patroni[1763]: 2025-12-05 14:19:44,416 INFO: Lock owner: node1; I am node3
+Dec 05 14:19:44 node3 patroni[1763]: 2025-12-05 14:19:44,565 INFO: bootstrap from replica 'node2' in progress
+Dec 05 14:19:44 node3 patroni[1784]: 2025-12-05 14:19:44.936 UTC [1784] FATAL:  the database system is starting up
+Dec 05 14:19:44 node3 patroni[1783]: localhost:5432 - rejecting connections
+Dec 05 14:19:45 node3 patroni[1786]: 2025-12-05 14:19:45.011 UTC [1786] FATAL:  the database system is starting up
+Dec 05 14:19:45 node3 patroni[1785]: localhost:5432 - rejecting connections
+Dec 05 14:19:45 node3 patroni[1782]: 2025-12-05 14:19:45.256 UTC [1782] LOG:  starting backup recovery with redo LSN 0/3000060, checkpoint LSN 0/30000B8, on timeline ID 1
+Dec 05 14:19:45 node3 patroni[1782]: 2025-12-05 14:19:45.257 UTC [1782] LOG:  entering standby mode
+Dec 05 14:19:45 node3 patroni[1782]: 2025-12-05 14:19:45.271 UTC [1782] LOG:  redo starts at 0/3000060
+Dec 05 14:19:45 node3 patroni[1782]: 2025-12-05 14:19:45.290 UTC [1782] LOG:  completed backup recovery with redo LSN 0/3000060 and end LSN 0/3000130
+Dec 05 14:19:45 node3 patroni[1782]: 2025-12-05 14:19:45.290 UTC [1782] LOG:  consistent recovery state reached at 0/3000130
+Dec 05 14:19:45 node3 patroni[1782]: 2025-12-05 14:19:45.290 UTC [1782] LOG:  invalid record length at 0/3000130: expected at least 24, got 0
+Dec 05 14:19:45 node3 patroni[1778]: 2025-12-05 14:19:45.290 UTC [1778] LOG:  database system is ready to accept read-only connections
+Dec 05 14:19:45 node3 patroni[1787]: 2025-12-05 14:19:45.333 UTC [1787] LOG:  started streaming WAL from primary at 0/3000000 on timeline 1
+Dec 05 14:19:46 node3 patroni[1788]: localhost:5432 - accepting connections
+Dec 05 14:19:46 node3 patroni[1763]: 2025-12-05 14:19:46,159 INFO: Lock owner: node1; I am node3
+Dec 05 14:19:46 node3 patroni[1763]: 2025-12-05 14:19:46,159 INFO: establishing a new patroni heartbeat connection to postgres
+Dec 05 14:19:46 node3 patroni[1763]: 2025-12-05 14:19:46,436 INFO: no action. I am (node3), a secondary, and following a leader (node1)
+Dec 05 14:19:54 node3 patroni[1763]: 2025-12-05 14:19:54,525 INFO: no action. I am (node3), a secondary, and following a leader (node1)

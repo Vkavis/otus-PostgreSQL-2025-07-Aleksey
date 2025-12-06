@@ -1,0 +1,2 @@
+"replicator" "replication_pass"
+"postgres" "postgres_pass"
