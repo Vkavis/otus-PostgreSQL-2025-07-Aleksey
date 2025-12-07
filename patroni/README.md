@@ -51,7 +51,7 @@ http://192.168.31.173:2379 is healthy: successfully committed proposal: took = 3
 http://192.168.31.171:2379 is healthy: successfully committed proposal: took = 3                                                           8.379372ms
 ```
 
-## 4. Установка PostgreSQL 17
+## 5. Установка PostgreSQL 17
 - На всех узлах
 ```
 sudo sh -c 'echo "deb https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
@@ -65,7 +65,7 @@ sudo systemctl stop postgresql
 sudo systemctl disable postgresql
 ```
 
-## 4. Установка Patroni
+## 5. Установка Patroni
 ```
 При попытки установки получил ошибку:
 kop@node1:~$ pip3 install patroni[etcd3]
@@ -279,7 +279,7 @@ sudo journalctl -u patroni -n 50 --no-pager
 2025-12-06 14:40:50,347 INFO: no action. I am (node2), a secondary, and following a leader (node1)
 ```
 
-## 5. Установка PgBouncer
+## 6. Установка PgBouncer
 ```
 sudo apt install pgbouncer -y
 ```
@@ -287,6 +287,11 @@ sudo apt install pgbouncer -y
 - sudo nano  [`/etc/pgbouncer/userlist.txt`](pgbouncer/userlist.txt)
 
 
+## 7. Установка HAProxy
+- sudo apt install -y haproxy
+- sudo nano /etc/haproxy/haproxy.cfg
+- sudo nano [`/etc/haproxy/haproxy.cfg`](haproxy/haproxy.cfg)
 
-
+systemctl enable --now haproxy
+sudo journalctl -u haproxy -n 20 --no-pager
 
