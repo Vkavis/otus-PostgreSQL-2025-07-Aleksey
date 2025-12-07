@@ -1,0 +1,29 @@
+[Unit]
+Description=High availability PostgreSQL Cluster - Patroni
+After=syslog.target network.target etcd.service
+Wants=etcd.service
+ConditionPathExists=/etc/patroni/config.yml
+
+[Service]
+Type=simple
+User=postgres
+Group=postgres
+Environment=PATH=/opt/patroni/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+Environment=PYTHONPATH=/opt/patroni/venv/lib/python3.12/site-packages
+ExecStart=/opt/patroni/venv/bin/patroni /etc/patroni/config.yml
+ExecReload=/bin/kill -HUP \$MAINPID
+KillMode=process
+TimeoutSec=30
+Restart=on-failure
+RestartSec=5s
+TimeoutStopSec=30
+LimitNOFILE=65536
+
+# Security
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ReadWritePaths=/var/lib/postgresql /var/run/postgresql /var/log/postgresql
+
+[Install]
+WantedBy=multi-user.target
