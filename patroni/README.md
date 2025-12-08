@@ -290,7 +290,7 @@ sudo apt install pgbouncer -y
 ## 7. Установка HAProxy
 - sudo apt install -y haproxy
 - sudo nano /etc/haproxy/haproxy.cfg
-- sudo nano [`/etc/haproxy/haproxy.cfg`](haproxy/haproxy.cfg)
+- sudo nano [`/etc/haproxy/haproxy.cfg`](HAProxy/haproxy.cfg)
 
 systemctl enable --now haproxy
 sudo journalctl -u haproxy -n 20 --no-pager
